@@ -1,17 +1,24 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     char mot[50] = "Bonjour";
+    int len = strlen(mot);
     char lettre;
     int faute = 0;
-    printf("Cherche une lettre du mot");
+    int lettre_trouvee = 0;
+
+    printf("Cherche une lettre du mot ");
     scanf(" %c", &lettre);
-    for(int i = 0; mot[i]!= '\0'; i++){
+
+    for(int i = 0; i < len-1; i++){
         if (mot[i] == lettre){
             printf("Bien joue !");
+            lettre_trouvee++;
+
         }
         else{
-            faute = faute + 1;
+            faute++;
             if (faute==1)
             {
                 printf("C'est la premiere erreur !\n\n\n\n\n\n\n-------\n");
@@ -35,11 +42,15 @@ int main() {
                 printf("Tu as perdu !-------\n | |\n | O\n | /|\\\n | / \\\n |\n-------\n");
                 break;
             }
-            
+
+            if (len == lettre_trouvee){
+                printf("Bravo tu as gagne ! Le mot etait : %s\n", mot);
+                break;
             }
-    printf("Cherche une lettre du mot");
+            
+        }
+    printf("Cherche une lettre du mot ");
     scanf(" %c", &lettre);
     }
-    printf("Mince c'est trop tard ! -------\n | |\n | O\n | /|\\\n | / \\\n |\n-------\n Le mot etait : %s\n", mot);
     return 0;
 }
