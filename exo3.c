@@ -11,7 +11,7 @@ int main() {
 
     printf("Cherche une lettre du mot ");
     if (scanf(" %c", &lettre) != 1) return 0;
-
+    // du coup jai fini lexo avec de l'aide parce que je navais plus aucune idee
     while (faute < 7 && lettre_trouvee < len) {
         int trouve = 0;
         for (int i = 0; i < len; i++) {
