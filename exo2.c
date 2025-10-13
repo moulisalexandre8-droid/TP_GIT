@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <math.h>
 
 //exo 2
 int main() {
-    int M = 0; //total
+    float M = 0; //total
     int C; //montant du pret
     int n; //nombre dannee
     int t; //taux d'interet annuel
@@ -12,7 +13,7 @@ int main() {
     int var2 = (1-(1+t/12)^-n*12);
     int var_carre = pow(var2, -n*12);
     M = var1/var_carre;
-    printf("Le montant de la mensuialité est de : %d", M);
+    printf("Le montant de la mensuialité est de : %.2f", M);
 
 
     return 0;
