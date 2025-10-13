@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-//exo 1
+//exo 2
 int main() {
 
-    int secondes = 0;
+    int secondes;
     scanf("%d", &secondes);
 
-    int minutes = secondes / 60;
-    int heures = minutes / 60;
-
-    printf("%d secondes = %d minutes et %d heures\n", secondes, minutes, heures);
+    int heures = secondes / 3600;
+    int minutes = (secondes % 3600) / 60;
+    int sec = secondes % 60;
+    printf("%d secondes = %d minutes et %d heures\n et %d secondes",secondes, minutes, heures, sec);
 
     return 0;
 }
