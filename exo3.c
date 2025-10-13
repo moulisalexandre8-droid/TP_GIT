@@ -7,17 +7,24 @@ int main() {
     char lettre;
     int faute = 0;
     int lettre_trouvee = 0;
+    int found[50] = {0}; /* marque les positions déjà trouvées */
 
     printf("Cherche une lettre du mot ");
-    scanf(" %c", &lettre);
+    if (scanf(" %c", &lettre) != 1) return 0;
 
-    for(int i = 0; i < len-1; i++){
-        if (mot[i] == lettre){
-            printf("Bien joue !");
-            lettre_trouvee++;
-
+    while (faute < 7 && lettre_trouvee < len) {
+        int trouve = 0;
+        for (int i = 0; i < len; i++) {
+            if (mot[i] == lettre && !found[i]) {
+                found[i] = 1;
+                lettre_trouvee++;
+                trouve = 1;
+            }
         }
-        else{
+
+        if (trouve) {
+            printf("Bien joue !\n");
+        } else {
             faute++;
             if (faute==1)
             {
@@ -39,18 +46,18 @@ int main() {
                 printf("C'est la sixieme erreur !-------\n | |\n | O\n | /|\\\n |\n |\n-------\n");
             }
             else if (faute==7){
-                printf("Tu as perdu !-------\n | |\n | O\n | /|\\\n | / \\\n |\n-------\n");
+                printf("Tu as perdu !-------\n | |\n | O\n | /|\\\n | / \\\n+ |\n-------\n");
                 break;
             }
-
-            if (len == lettre_trouvee){
-                printf("Bravo tu as gagne ! Le mot etait : %s\n", mot);
-                break;
-            }
-            
         }
-    printf("Cherche une lettre du mot ");
-    scanf(" %c", &lettre);
+
+        if (lettre_trouvee == len){
+            printf("Bravo tu as gagne ! Le mot etait : %s\n", mot);
+            break;
+        }
+
+        printf("Cherche une lettre du mot ");
+        if (scanf(" %c", &lettre) != 1) break;
     }
     return 0;
 }
