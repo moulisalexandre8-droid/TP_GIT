@@ -9,6 +9,6 @@ int main() {
     {
         tableau[j] = 1;
     }
-    printf("OK %d\n", tableau[4]);
+    printf("OK %d\n", tableau[4]);// notre tableau va de 0 a 4 et ici on essayait de prendre l'element a la position 5 donc le 6eme
     return 0;
 }
