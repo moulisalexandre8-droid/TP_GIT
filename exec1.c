@@ -8,8 +8,8 @@ int main() {
         return 1; // quitter avec un code d'erreur
     }
     else {
-        int c = a / b;  // division sûre    
-        printf("%d\n", c);
+        float c = (float)a / b;  // division sûre
+        printf("%f\n", c); // on met un float car une division peut donner un nombre a virgule
     }
         
     return 0;
