@@ -2,6 +2,6 @@
 
 int main() {
     char c = 'A';
-    printf("c = %s\n", c);
+    printf("c = %c\n", c);
     return 0;
 }
