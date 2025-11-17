@@ -28,33 +28,30 @@ int main(){
 
     int mid = width / 2;
 
-    for (int i = 0; i < max_height; i++) {
+    for (int i = 0; i < taille; i++) {
 
         int left  = mid - i;   
         int right = mid + i;   
-
-        for (int j = 0; j < width; j++) {
-            if (j == left || j == right) {
-                img[i][j] = 'A';   
-            }
-            else if (j > left && j < right) {
-                img[i][j] = 'S';
-            }
-            else {
-                img[i][j] = ' ';          
-            }
+        img[i][left] = 'A';
+        img[i][right] = 'A';
+        for (int j = left +1; j < right; j++){
+            img[i][j] = 'S';
+        }
+        for (int t = 0; t < mid -(taille-1); t++){
+            img[taille-1][t] = '_';
+        }
+        for (int t = mid + (taille-1)+1; t<width; t++ ){
+            img[taille-1][t] = '_';
         }
     }
+    
 
     for (int j = 0; j < max_height; j++) {
         for (int i = 0; i < width; i++) {
-            printf("%c", img[j][i]);
+            printf("%c ", img[j][i]);
         }
         printf("\n");
     }
-
-
-
 
 
 
