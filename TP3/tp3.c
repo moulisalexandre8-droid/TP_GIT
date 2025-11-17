@@ -25,7 +25,12 @@ int main(){
             }
                 
         }
-
+        for (int j = 0; j<= width; j++) {
+            for (int i = 0; i <= max_height; i++) {
+            printf("%c", img[j][i]);
+        }
+        printf("\n");
+    }
 
         
 
