@@ -22,7 +22,6 @@ int main(){
         for(int j=0; j <= width; j++){
             for(int i=0; i <= max_height; i++){
                 img[j][i]= ' ';
-                printf("%c", img[j][i]);
             }
                 
         }
@@ -37,21 +36,22 @@ int main(){
         for (int j = 0; j < width; j++) {
             if (j == left || j == right) {
                 img[i][j] = 'A';   
-                printf("%c", img);       
             }
             else if (j > left && j < right) {
                 img[i][j] = 'S';
-                printf("%c", img);          
             }
             else {
-                img[i][j] = ' ';
-                printf("%c", img);          
+                img[i][j] = ' ';          
             }
         }
     }
 
-
-
+    for (int j = 0; j < max_height; j++) {
+        for (int i = 0; i < width; i++) {
+            printf("%c", img[j][i]);
+        }
+        printf("\n");
+    }
 
 
 
