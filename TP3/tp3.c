@@ -65,6 +65,11 @@ for (int t = 0; t < taille - 1; t++) {
     taille2++;
 }
 
+for (int k = 0; k < taille; k++){
+    
+
+}
+
 
 
 
