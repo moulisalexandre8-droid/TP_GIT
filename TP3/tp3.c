@@ -45,19 +45,35 @@ int main(){
         }
     }
     
+    
+
+int taille2 = taille;              
+int left = mid - (taille - 1) + 1;     
+int right = mid + (taille - 1) - 1;
+
+for (int t = 0; t < taille - 1; t++) {  
+
+    img[taille2][left] = '.';
+    img[taille2][right] = '.';
+
+    for (int x = left + 1; x < right; x++) {
+        img[taille2][x] = 'S';
+    }
+
+    left++;
+    right--;
+    taille2++;
+}
+
+
+
 
     for (int j = 0; j < max_height; j++) {
         for (int i = 0; i < width; i++) {
-            printf("%c ", img[j][i]);
+            printf("%c", img[j][i]);
         }
         printf("\n");
     }
-
-
-
-
-
-
 
 
 
