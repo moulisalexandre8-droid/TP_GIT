@@ -6,6 +6,7 @@ int main(){
     int taille;
     int width;
     int max_height;
+    char img[taille][max_height];
 
     printf("Choisis une taille compris entre 5 et 10");
     scanf("%d", taille);
@@ -17,7 +18,7 @@ int main(){
     else{
         width = taille*taille;
         max_height = 3*taille-1;
-
+        
 
 
 
