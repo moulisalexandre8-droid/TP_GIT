@@ -7,6 +7,7 @@ int main(){
     int width;
     int max_height;
     char img[100][100];
+    int mid;
 
     printf("Choisis une taille compris entre 5 et 10");
     scanf("%d", &taille);
@@ -25,24 +26,56 @@ int main(){
             }
                 
         }
-        for (int j = 0; j<= width; j++) {
-            for (int i = 0; i <= max_height; i++) {
-            printf("%c", img[j][i]);
+
+    int mid = width / 2;
+
+    for (int i = 0; i < max_height; i++) {
+
+        int left  = mid - i;   
+        int right = mid + i;   
+
+        for (int j = 0; j < width; j++) {
+            if (j == left || j == right) {
+                img[i][j] = 'A';   
+                printf("%c", img);       
+            }
+            else if (j > left && j < right) {
+                img[i][j] = 'S';
+                printf("%c", img);          
+            }
+            else {
+                img[i][j] = ' ';
+                printf("%c", img);          
+            }
         }
-        printf("\n");
-    }
-
-        
-
-
-
-
-
     }
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    
     return 0;
 }
