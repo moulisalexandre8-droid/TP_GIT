@@ -16,8 +16,19 @@ void afficherMenu()
 
 }
 
+int lireChoix(){
+    int choix;
+    printf("Choisissez ce que vous voulez voir");
+    scanf("%d", choix);
+    return choix;
+}
+
+
+
 
 int main(){
 
     afficherMenu();
+    int user = lireChoix();
+    printf("Votre choix :%d", user);
 }
