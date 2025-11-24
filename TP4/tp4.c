@@ -35,14 +35,37 @@ int saisirNombreEleves(){
     }
 }
 
+void saisirNote(int nombreEleve, float tab[30][3]){
+    float note;
+    for(int i = 0; i<nombreEleve; i++){
+        for(int j = 0; j <3; j++){
+            printf("Entrez la note :\n");
+            scanf("%f", &note);
+            if(note<0 || note>20){
+                printf("La note doit etre comprise entre 0 et 20\n");
+                scanf("%f", &note);
+            }
+            else{
+                tab[i][j] = note ;
+
+            }
+        }
+    printf("Eleve %d:\nNote du controle 1 (0 a 20) :%f\nNote du controle 2 (0 a 20) :%f\nNote du controle 3 (0 a 20) :%f",i, tab[i][0], tab[i][1], tab[i][2]);
+    
+    }
+    return;
+
+}
 
 int main(){
 
     afficherMenu();
+    float tab[30][3];
     int choix = lireChoix();
     int nombre = saisirNombreEleves();
     printf("Votre choix :%d\n", choix);
     printf("votre choix :%d", nombre);
+    saisirNote(nombre, tab);
 
 
 
