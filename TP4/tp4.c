@@ -93,6 +93,19 @@ float calculMoyenneGeneral(int nombreEleve, float tab[30][3]){
 
 }
 
+float trouverMeilleureNoteControle(float tab[30][3], int indiceControle, int nombreEleve){
+    float max = tab[0][indiceControle];
+    for(int j=0; j<nombreEleve;j++){
+        if (tab[j][indiceControle] > max){
+            
+        }
+
+    }
+
+
+
+}
+
 
 
 
@@ -102,6 +115,7 @@ float calculMoyenneGeneral(int nombreEleve, float tab[30][3]){
 int main(){
 
     afficherMenu();
+    int indiceControle;
     int indice;
     float tab[30][3];
     int choix = lireChoix();
@@ -117,6 +131,8 @@ int main(){
     moyenne = calculMoyenneEleve(tab, indice);
     printf("%f", moyenne);
 
+    printf("Donnez l'indice du controle (0, 1 ou 2)");
+    scanf("%d", &indiceControle);
     
 
     return 0;
