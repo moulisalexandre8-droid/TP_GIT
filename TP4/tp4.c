@@ -57,6 +57,21 @@ void saisirNote(int nombreEleve, float tab[30][3]){
 
 }
 
+void afficherNote(int nombreEleve, float tab[30][3]){
+    printf("Tableau des notes\nEleve  C1  C2  C3\n");
+    for(int i = 0; i<nombreEleve; i++){
+        printf("%5d", i + 1);
+        for(int j = 0; j <3; j++){
+            printf(" %4.1f", tab[i][j]);
+        }
+        printf("\n");
+    return;
+    }
+
+}
+
+
+
 int main(){
 
     afficherMenu();
@@ -66,6 +81,7 @@ int main(){
     printf("Votre choix :%d\n", choix);
     printf("votre choix :%d", nombre);
     saisirNote(nombre, tab);
+    afficherNote(nombre, tab);
 
 
 
