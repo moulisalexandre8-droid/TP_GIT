@@ -70,11 +70,9 @@ void afficherNote(int nombreEleve, float tab[30][3]){
 
 }
 
-float calculMoyenneEleve(float tab[30][3]){
-    int indice;
+float calculMoyenneEleve(float tab[30][3], int indice){
+    
     int resultat;
-    printf("Donnez l'indice de l eleve");
-    scanf("%d", &indice);
     for(int i = 0; i<3; i++){
         resultat += tab[indice][i];
     }
@@ -83,6 +81,17 @@ float calculMoyenneEleve(float tab[30][3]){
 
 }
 
+float calculMoyenneGeneral(int nombreEleve, float tab[30][3]){
+    float sommeMoyennes = 0.0f;
+
+    for(int i = 0; i<nombreEleve; i++){
+        sommeMoyennes = sommeMoyennes + calculMoyenneEleve(tab, i);
+    }
+
+    return sommeMoyennes/nombreEleve;
+
+
+}
 
 
 
@@ -93,6 +102,7 @@ float calculMoyenneEleve(float tab[30][3]){
 int main(){
 
     afficherMenu();
+    int indice;
     float tab[30][3];
     int choix = lireChoix();
     int nombre = saisirNombreEleves();
@@ -101,8 +111,13 @@ int main(){
     printf("votre choix :%d", nombre);
     saisirNote(nombre, tab);
     afficherNote(nombre, tab);
-    moyenne = calculMoyenneEleve(tab);
+
+    printf("Donnez l'indice de l eleve");
+    scanf("%d", &indice);
+    moyenne = calculMoyenneEleve(tab, indice);
     printf("%f", moyenne);
+
+    
 
     return 0;
 }
