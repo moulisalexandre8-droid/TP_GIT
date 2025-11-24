@@ -23,13 +23,30 @@ int lireChoix(){
     return choix;
 }
 
-
+int saisirNombreEleves(){
+    int nombre;
+    printf("Donnez moi le nombre d eleve compris entre 1 et 30");
+    scanf("%d", &nombre);
+    if(nombre<1 || nombre>30){
+        saisirNombreEleves();
+    }
+    else{
+        return nombre;
+    }
+}
 
 
 int main(){
 
     afficherMenu();
-    int user = lireChoix();
-    printf("Votre choix :%d", user);
+    int choix = lireChoix();
+    int nombre = saisirNombreEleves();
+    printf("Votre choix :%d\n", choix);
+    printf("votre choix :%d", nombre);
+
+
+
+
+
     return 0;
 }
