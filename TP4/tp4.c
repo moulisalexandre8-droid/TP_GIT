@@ -97,16 +97,21 @@ float trouverMeilleureNoteControle(float tab[30][3], int indiceControle, int nom
     float max = tab[0][indiceControle];
     for(int j=0; j<nombreEleve;j++){
         if (tab[j][indiceControle] > max){
-            
+            max = tab[j][indiceControle];
         }
 
     }
 
-
+return max;
 
 }
 
-
+void afficherMeilleuresNotes(int nombreEleves, float tab[30][3]){
+    for(int j = 0; j < 3; j++){
+        float meilleureNote = trouverMeilleureNoteControle(tab, nombreEleves, j);
+        printf("Meilleure note au controle %d : %.2f\n", j+1, meilleureNote);
+    }
+}
 
 
 
@@ -114,26 +119,61 @@ float trouverMeilleureNoteControle(float tab[30][3], int indiceControle, int nom
 
 int main(){
 
-    afficherMenu();
+    
     int indiceControle;
     int indice;
     float tab[30][3];
+    afficherMenu();
     int choix = lireChoix();
-    int nombre = saisirNombreEleves();
     float moyenne;
     printf("Votre choix :%d\n", choix);
-    printf("votre choix :%d", nombre);
-    saisirNote(nombre, tab);
-    afficherNote(nombre, tab);
 
-    printf("Donnez l'indice de l eleve");
-    scanf("%d", &indice);
-    moyenne = calculMoyenneEleve(tab, indice);
-    printf("%f", moyenne);
-
-    printf("Donnez l'indice du controle (0, 1 ou 2)");
-    scanf("%d", &indiceControle);
     
+
+    
+    
+
+    if(choix == 1){
+        int nombre = saisirNombreEleves();
+        printf("votre choix :%d", nombre);
+
+    }
+    else if(choix == 2){
+        int nombre = saisirNombreEleves();
+        saisirNote(nombre, tab);
+    }
+    else if(choix == 3){
+        int nombre = saisirNombreEleves();
+        afficherNote(nombre, tab);
+    }
+    else if(choix == 4){
+        printf("Donnez l'indice de l eleve");
+        scanf("%d", &indice);
+        moyenne = calculMoyenneEleve(tab, indice);
+        printf("%f", moyenne);
+    }
+    else if(choix == 5){
+        int nombre = saisirNombreEleves();
+        float moyenne = calculMoyenneGeneral(nombre, tab[30][3]);
+        printf("%f", moyenne);
+    }
+    else if(choix == 6){
+        printf("Donnez l'indice du controle (0, 1 ou 2)");
+        scanf("%d", &indiceControle);
+        printf(afficherMeilleuresNotes);
+    }
+    else{
+        printf("Quitter");
+    }
+
+
+
+
+
+
+
+
+
 
     return 0;
 }
