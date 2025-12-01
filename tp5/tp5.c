@@ -23,10 +23,24 @@ int lireChoix(){
 }
 
 
-void initialiser(char tab[7]){
+void initialiser(int tab[7]){
 
     for(int i = 0; i<7; i++){
-
+        tab[i] = 5;
     }
     
+}
+
+void ajouterConsommation(int tab_conso[7]){
+    int choix_conso;
+    int quantite;
+    printf("Quelle categorie voulez vous modifier ?\n1. Eau 💧\n2. Cafe ☕\n3. Bonbons 🍬\n4. Gateau 🍰\n5. Legumes 🥦\n6. Fruits 🍎\n7. Proteines 🍗\n");
+    printf("Votre choix ? : ");
+    scanf("%d", &choix_conso);
+    printf("\nCombien d unites ajouter ? : ");
+    scanf("%d", &quantite);
+    initialiser(tab_conso);
+    tab_conso[choix_conso] = quantite;
+    printf("Consommation mise a jour");
+
 }

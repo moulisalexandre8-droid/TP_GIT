@@ -3,15 +3,22 @@
 
 int main()
 {
-    char tab[7];
+    int tab[7];
     afficherMenu();
     int choix = lireChoix();
-    while (choix != 3)
+    if (choix == 3)
     {
         afficherMenu();
         choix = lireChoix();
     }
-
+    else if(choix == 1){
+        ajouterConsommation(tab[7]);
+    }
+    else if (choix == 2)
+    {
+        
+    }
+    
     
     
 
