@@ -4,8 +4,8 @@
 int main()
 {
     char tab[7];
-    int choix = lireChoix();
     afficherMenu();
+    int choix = lireChoix();
     while (choix != 3)
     {
         afficherMenu();
