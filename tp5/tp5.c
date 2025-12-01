@@ -26,7 +26,7 @@ int lireChoix(){
 void initialiser(int tab[7]){
 
     for(int i = 0; i<7; i++){
-        tab[i] = 5;
+        tab[i] = 0;
     }
     
 }
@@ -41,6 +41,12 @@ void ajouterConsommation(int tab_conso[7]){
     scanf("%d", &quantite);
     initialiser(tab_conso);
     tab_conso[choix_conso] = quantite;
+    printf(tab_conso);
     printf("Consommation mise a jour");
+
+}
+
+void afficheResume(int tab_conso[7]){
+    printf("========== Resume du jour ==========\n Eau      : %d\nCafe     : %d\nBonbons  : %d\nGateau   : %d\nLegumes  : %d\nFruits   : %d\nProteines: %d\n==============================", tab_conso[0], tab_conso[1], tab_conso[2], tab_conso[3], tab_conso[4], tab_conso[5], tab_conso[6]);
 
 }
