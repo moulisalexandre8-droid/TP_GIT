@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include "tp5.h"
 
+
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    setlocale(LC_ALL, ".UTF-8");
+
     int tab[7];
     initialiser(tab);
     afficherMenu();
     int choix = lireChoix();
+    
     if (choix == 3)
     {
         afficherMenu();
@@ -23,4 +29,8 @@ int main()
     
     
 
+
+
+    
+    return 0;
 }
