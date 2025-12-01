@@ -39,7 +39,6 @@ void ajouterConsommation(int tab_conso[7]){
     scanf("%d", &choix_conso);
     printf("\nCombien d unites ajouter ? : ");
     scanf("%d", &quantite);
-    initialiser(tab_conso);
     tab_conso[choix_conso] = quantite;
     printf("Consommation mise a jour");
 
@@ -53,29 +52,34 @@ void afficheResume(int tab_conso[7]){
 int charger(int tab[7]){
 
     FILE * f = fopen("consommation.txt", "r");
-    if(f==NULL)
+
+    for (int i = 0; i < 7; i++) 
     {
-        return 0;
-    }
-    else
-    {
-        for (int i = 0; i<7; i++){
-            tab[i] = i;
-            if(f==NULL)
-            {
-                fclose(f);
-                return 0;
-            }
-        
+        if (fscanf(f, "%d", &tab[i]) != 1)
+        {
+            fclose(f);
+            return 0;
         }
-        return 1;
     }
+    fclose(f);
+    return 1;
 
 }
 
-int sauvegarder(){
+int sauvegarder(int tab[7]){
+
+    FILE * f = fopen("consommation.txt", "w");
+
+    for (int i = 0; i < 7; i++) 
+    {
+    fprintf(f, "%d ", tab[i]);
+    }
+
+    fprintf(f, "\n");
+    fclose(f);
+
+    return 1;
 
 
 
-    
 }
