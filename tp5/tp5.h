@@ -5,13 +5,10 @@
 
 void afficherMenu();
 int lireChoix();
-void initialiser();
-void ajouterConsommation();
-void afficheResume();
-int charger();
-int sauvegarder();
-
-
-
+void initialiser(int tab[7]);
+void ajouterConsommation(int tab_conso[7]);
+void afficheResume(int tab_conso[7]);
+int charger(int tab[7]);
+int sauvegarder(int tab[7]);
 
 #endif
