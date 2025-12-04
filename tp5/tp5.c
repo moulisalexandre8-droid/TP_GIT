@@ -53,19 +53,62 @@ void ajouterConsommation(int tab_conso[7]) {
     printf("Consommation mise a jour\n");
 }
 
+void afficherBarre(int valeur, int max) {
+
+    if (max <= 0) {
+        max = 1; 
+    }
+
+    if (valeur < 0) valeur = 0;
+    if (valeur > max) valeur = max;
+
+    int casesPleines = (valeur * 10) / max;
+
+    for (int i = 0; i < 10; i++) {
+        if (i < casesPleines) {
+            printf("█");
+        } else {
+            printf("░");
+        }
+    }
+}
+
 
 void afficheResume(int tab_conso[7]) {
 
     printf("========== Resume du jour ==========\n");
-    printf("Eau       : %d\n", tab_conso[0]);
-    printf("Cafe      : %d\n", tab_conso[1]);
-    printf("Bonbons   : %d\n", tab_conso[2]);
-    printf("Gateau    : %d\n", tab_conso[3]);
-    printf("Legumes   : %d\n", tab_conso[4]);
-    printf("Fruits    : %d\n", tab_conso[5]);
-    printf("Proteines : %d\n", tab_conso[6]);
+
+    printf("Eau       : %d ", tab_conso[0]);
+    afficherBarre(tab_conso[0], 8);
+    printf("\n");
+
+    printf("Cafe      : %d ", tab_conso[1]);
+    afficherBarre(tab_conso[1], 3);
+    printf("\n");
+
+    printf("Bonbons   : %d ", tab_conso[2]);
+    afficherBarre(tab_conso[2], 12);
+    printf("\n");
+
+    printf("Gateau    : %d ", tab_conso[3]);
+    afficherBarre(tab_conso[3], 4);
+    printf("\n");
+
+    printf("Legumes   : %d ", tab_conso[4]);
+    afficherBarre(tab_conso[4], 5);
+    printf("\n");
+
+    printf("Fruits    : %d ", tab_conso[5]);
+    afficherBarre(tab_conso[5], 3);
+    printf("\n");
+
+    printf("Proteines : %d ", tab_conso[6]);
+    afficherBarre(tab_conso[6], 2);
+    printf("\n");
+
     printf("====================================\n");
 }
+
 
 int charger(int tab[7]) {
 

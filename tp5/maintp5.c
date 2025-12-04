@@ -15,38 +15,24 @@ int main()
         initialiser(tab);
     }
 
-    int choix = 0;
+    int quitter = 0;
 
-    while (choix != 3)
-    {
+    while (quitter == 0) {
         afficherMenu();
-        choix = lireChoix();
+        int choix = lireChoix();
 
-        if (choix == 1) 
-        {
+        if (choix == 1) {
             ajouterConsommation(tab);
         }
-        else if (choix == 2) 
-        {
+        else if (choix == 2) {
             afficheResume(tab);
         }
-        else if (choix == 3) 
-        {
-
-            if (sauvegarder(tab) == 1) 
-            {
-                printf("Sauvegarde reussie !\n");
-            } 
-            else 
-            {
-                printf("Erreur lors de la sauvegarde.\n");
-            }
-
-            printf("Au revoir !\n");
+        else if (choix == 3) {
+            sauvegarder(tab);
+            quitter = 1;
         }
-        else 
-        {
-            printf("Choix invalide.\n");
+        else {
+            printf("Choix invalide !\n");
         }
     }
 
