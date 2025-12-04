@@ -10,7 +10,6 @@ int main()
     int tab[7];
     int objectifs[7] = {8, 0, 0, 0, 5, 3, 2};
 
-
     if (charger(tab) == 0) 
     {
         printf("Aucune sauvegarde trouvee.\n");
@@ -30,10 +29,14 @@ int main()
             afficheResume(tab);
         }
         else if (choix == 3) {
-        afficherObjectifsEtScore(tab, objectifs);
+            afficherObjectifsEtScore(tab, objectifs);
         }
         else if (choix == 4) {
-            sauvegarder(tab);
+            if (sauvegarder(tab) == 1) {
+                printf("Sauvegarde reussie !\n");
+            } else {
+                printf("Erreur lors de la sauvegarde.\n");
+            }
             quitter = 1;
         }
         else {

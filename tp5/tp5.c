@@ -13,14 +13,17 @@ void afficherMenu() {
     
 }
 
-
 int lireChoix() {
     int choix;
     printf("Votre choix : ");
-    scanf("%d", &choix);
+    if (scanf("%d", &choix) != 1) {
+        // si saisie invalide on vide stdin et renvoie -1
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}
+        return -1;
+    }
     return choix;
 }
-
 
 void initialiser(int tab[7]) {
     for (int i = 0; i < 7; i++) 
@@ -28,7 +31,6 @@ void initialiser(int tab[7]) {
         tab[i] = 0;
     }
 }
-
 
 void ajouterConsommation(int tab_conso[7]) {
 
@@ -39,7 +41,12 @@ void ajouterConsommation(int tab_conso[7]) {
     printf("1. Eau 💧\n2. Cafe ☕\n3. Bonbons 🍬\n4. Gateau 🍰\n5. Legumes 🥦\n6. Fruits 🍎\n7. Proteines 🍗\n");
 
     printf("Votre choix ? : ");
-    scanf("%d", &choix_conso);
+    if (scanf("%d", &choix_conso) != 1) {
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}
+        printf("Saisie invalide.\n");
+        return;
+    }
 
     if (choix_conso < 1 || choix_conso > 7) 
     {
@@ -48,7 +55,12 @@ void ajouterConsommation(int tab_conso[7]) {
     }
 
     printf("Combien d unites ajouter ? : ");
-    scanf("%d", &quantite);
+    if (scanf("%d", &quantite) != 1) {
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {}
+        printf("Saisie invalide.\n");
+        return;
+    }
 
     tab_conso[choix_conso - 1] += quantite;
 
@@ -74,7 +86,6 @@ void afficherBarre(int valeur, int max) {
         }
     }
 }
-
 
 void afficheResume(int tab_conso[7]) {
 
@@ -110,7 +121,6 @@ void afficheResume(int tab_conso[7]) {
 
     printf("====================================\n");
 }
-
 
 int charger(int tab[7]) {
 
