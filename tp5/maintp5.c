@@ -8,6 +8,8 @@ int main()
     setlocale(LC_ALL, ".UTF-8");
 
     int tab[7];
+    int objectifs[7] = {8, 0, 0, 0, 5, 3, 2};
+
 
     if (charger(tab) == 0) 
     {
@@ -28,6 +30,9 @@ int main()
             afficheResume(tab);
         }
         else if (choix == 3) {
+        afficherObjectifsEtScore(tab, objectifs);
+        }
+        else if (choix == 4) {
             sauvegarder(tab);
             quitter = 1;
         }

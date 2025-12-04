@@ -8,7 +8,9 @@ void afficherMenu() {
     printf("=============================\n");
     printf("1. Ajouter une consommation\n");
     printf("2. Afficher le resume du jour\n");
-    printf("3. Sauvegarde et quitter\n");
+    printf("3. Afficher objectifs et score de sante\n");
+    printf("4. Sauvegarde et quitter\n");
+    
 }
 
 
@@ -147,4 +149,57 @@ int sauvegarder(int tab[7]) {
     fprintf(f, "\n");
     fclose(f);
     return 1;
+}
+
+int calculerScoreSante(int tab[7], int objectifs[7])
+{
+    int score = 50;
+
+    // Eau
+    if (tab[0] >= objectifs[0]) score += 10;
+
+    // Légumes
+    if (tab[4] >= objectifs[4]) score += 10;
+
+    // Fruits
+    if (tab[5] >= objectifs[5]) score += 10;
+
+    // Protéines
+    if (tab[6] >= objectifs[6]) score += 10;
+
+    // Bonbons : malus
+    if (tab[2] > 5) {
+        int malus = tab[2] - 5;
+        if (malus > 15) malus = 15;
+        score -= malus;
+    }
+
+    // Café : malus
+    if (tab[1] > 3) {
+        int malus = (tab[1] - 3) * 2;
+        if (malus > 20) malus = 20;
+        score -= malus;
+    }
+
+    // borne entre 0 et 100
+    if (score < 0) score = 0;
+    if (score > 100) score = 100;
+
+    return score;
+}
+
+void afficherObjectifsEtScore(int tab[7], int objectifs[7])
+{
+    printf("======= Objectifs quotidiens =======\n");
+    printf("Eau       : %d / %d\n", tab[0], objectifs[0]);
+    printf("Cafe      : %d / %d\n", tab[1], objectifs[1]);
+    printf("Bonbons   : %d / %d\n", tab[2], objectifs[2]);
+    printf("Gateau    : %d / %d\n", tab[3], objectifs[3]);
+    printf("Legumes   : %d / %d\n", tab[4], objectifs[4]);
+    printf("Fruits    : %d / %d\n", tab[5], objectifs[5]);
+    printf("Proteines : %d / %d\n", tab[6], objectifs[6]);
+
+    int score = calculerScoreSante(tab, objectifs);
+
+    printf("\n===== Score de sante : %d / 100 =====\n", score);
 }
