@@ -16,7 +16,7 @@ typedef struct
     int occupe;
 } Place;
 
-void lecture_donnee(num_rang, num_tab, nom_fichier){};
+void lecture_donnee(num_rang, num_tab, nom_fichier, liste){};
 
 void creation_salle();
 
