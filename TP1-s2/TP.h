@@ -16,6 +16,14 @@ typedef struct
     int occupe;
 } Place;
 
+int lecture_donnee;
+
+void creation_salle;
+
+void placement;
+
+void affichage;
+
 
 
 
