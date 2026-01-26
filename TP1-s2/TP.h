@@ -16,13 +16,13 @@ typedef struct
     int occupe;
 } Place;
 
-int lecture_donnee;
+void lecture_donnee(num_rang, num_tab, nom_fichier){};
 
-void creation_salle;
+void creation_salle();
 
-void placement;
+void placement();
 
-void affichage;
+void affichage();
 
 
 
