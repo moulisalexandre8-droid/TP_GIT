@@ -58,6 +58,14 @@ void place_correspondante(Place salle[], int nb_colone, int nb_ligne){
             salle[index].occupe = 0;
         }
     }
+}
 
-        
+    void placement_simple(Eleve eleves[], int nb_eleves, Place salle[], int nb_places) {
+    int eleve_idx = 0;
+    for (int i = 0; i < nb_places && eleve_idx < nb_eleves; i++) {
+        if (salle[i].occupe == 0) {
+            salle[i].occupe = 1;
+            eleve_idx++;
+        }
     }
+}

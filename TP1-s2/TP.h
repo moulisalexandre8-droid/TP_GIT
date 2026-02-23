@@ -27,6 +27,9 @@ void affichage();
 
 void place_correspondante(Place salle[], int nb_rang, int nb_tab);
 
+void placement_simple(Eleve eleves[], int nb_eleves, Place salle[], int nb_places);
+
+
 
 
 #endif 
