@@ -13,6 +13,8 @@ int main()
     char nom_fichier[50];
     lecture_donnee(&p1.num_rang, &p1.num_tab, &nom_fichier, liste[50][50]);
 
+    
+
 
 
 

@@ -45,9 +45,19 @@ void lecture_donnee(int *nb_rangees, int *nb_tables, char *nom_fichier, Eleve li
     }
 
     fclose(f);
-    
-    
-    
-    
-
 }
+
+
+void place_correspondante(Place salle[], int nb_colone, int nb_ligne){
+    int index = 0;
+    for(int i = 0; i < nb_colone; i++ ){
+        for(int j = 0; j < nb_ligne; i++){
+            
+            salle[index].num_rang = i + 1;
+            salle[index].num_tab = j + 1;
+            salle[index].occupe = 0;
+        }
+    }
+
+        
+    }
