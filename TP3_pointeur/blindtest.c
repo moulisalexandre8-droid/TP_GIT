@@ -4,6 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
+#include <blindtest.h>
 
 
 /* -------------------------------------------------- */
@@ -92,7 +93,13 @@ void play_song_excerpt_at(const char *filename, int start, int seconds) {
 Charge les morceaux depuis songs.txt dans un tableau.
 Retourne le nombre de morceaux chargés.
 */
-/***/ load_songs(/***/filename, .../***/) {
+/***/ 
+void load_songs(char * filename, Son *song) {
+    int taille = 100;
+    song = malloc(sizeof(Son)*taille);
+    if(song == NULL)
+        return 0;
+
     FILE *f;
     char line[3 * 256];
     int count = 0;
@@ -122,6 +129,14 @@ Retourne le nombre de morceaux chargés.
             printf("Ligne ignoree dans songs.txt.\n");
             continue;
         }
+
+        if(count>=taille){
+            taille *=2;
+            song = realloc(song, sizeof(Son)*taille);
+        }
+        strcpy(song[count].nom_fichier, nom_fichier);
+            strcpy(song[count].titre, titre);
+            strcpy(song[count].artiste, artiste);
 
 // TO DO
 // STOCKER LES CHANSONS
