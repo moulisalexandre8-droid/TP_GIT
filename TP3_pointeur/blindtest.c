@@ -60,8 +60,8 @@ Compare deux chaînes après normalisation.
 Retourne 1 si elles sont équivalentes, sinon 0.
 */
 int string_equals_normalized(const char *a, const char *b) {
-    char na[MAX_STR];
-    char nb[MAX_STR];
+    char na[100];
+    char nb[100];
 
     normalize_string(na, a);
     normalize_string(nb, b);
@@ -88,16 +88,48 @@ void play_song_excerpt_at(const char *filename, int start, int seconds) {
     system(command);
 }
 
+/*
+Charge les morceaux depuis songs.txt dans un tableau.
+Retourne le nombre de morceaux chargés.
+*/
+/***/ load_songs(/***/filename, .../***/) {
+    FILE *f;
+    char line[3 * 256];
+    int count = 0;
 
+    f = fopen(filename, "r");
+    if (f == NULL) {
+        perror("Erreur ouverture songs.txt");
+        return -1;
+    }
 
+    while (fgets(line, sizeof(line), f) != NULL && count < 100) {
+        char *file;
+        char *title;
+        char *artist;
 
-/* -------------------------------------------------- */
-/* PROGRAMME PRINCIPAL                                */
-/* -------------------------------------------------- */
+        trim_newline(line);
 
-int main() {
+        if (strlen(line) == 0) {
+            continue;
+        }
 
+        file = strtok(line, ";");
+        title = strtok(NULL, ";");
+        artist = strtok(NULL, ";");
 
+        if (file == NULL || title == NULL || artist == NULL) {
+            printf("Ligne ignoree dans songs.txt.\n");
+            continue;
+        }
 
-    return 0;
+// TO DO
+// STOCKER LES CHANSONS
+
+        count++;
+    }
+
+    fclose(f);
+    return count;
 }
+
