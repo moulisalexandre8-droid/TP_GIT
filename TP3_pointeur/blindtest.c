@@ -135,16 +135,33 @@ void load_songs(char * filename, Son *song) {
             song = realloc(song, sizeof(Son)*taille);
         }
         strcpy(song[count].nom_fichier, file);
-            strcpy(song[count].titre, title);
-            strcpy(song[count].artiste, artist);
-
-// TO DO
-// STOCKER LES CHANSONS
+        strcpy(song[count].titre, title);
+        strcpy(song[count].artiste, artist);
 
         count++;
     }
 
     fclose(f);
     return count;
+}
+
+void melanger(Son *song, int count){
+
+    if(song == NULL)
+        return 0;
+
+    srandtime(NULL);
+
+    for(int i =0 ; i<count; i++){
+
+    int r = rand()%(count);
+    Son temp = song[i];
+    song[i] = song[r];
+    song[r] = temp;
+
+    }
+
+
+
 }
 

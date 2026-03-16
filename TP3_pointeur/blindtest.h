@@ -27,9 +27,9 @@ typedef struct Joueur_liste
 
 
 
-void  load_songs();
+void  load_songs(char * filename, Son *song);
 
-void melanger();
+void melanger(Son *song);
 
 void gestion_joueur();
 
