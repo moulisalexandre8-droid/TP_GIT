@@ -27,7 +27,7 @@ typedef struct Joueur_liste
 
 
 
-void  load_songs(char * filename, Son *song);
+int load_songs(char * filename, Son *song);
 
 void melanger(Son *song);
 
@@ -38,5 +38,13 @@ void charger_scores();
 void update_scores();
 
 void sauver_scores();
+
+void play_song_excerpt_at(const char *filename, int start, int seconds);
+
+int string_equals_normalized(const char *a, const char *b);
+
+void normalize_string(char *dest, const char *src);
+
+void trim_newline(char *s);
 
 #endif

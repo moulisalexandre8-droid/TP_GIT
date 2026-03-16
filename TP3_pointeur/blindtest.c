@@ -94,7 +94,7 @@ Charge les morceaux depuis songs.txt dans un tableau.
 Retourne le nombre de morceaux chargés.
 */
 /***/ 
-void load_songs(char * filename, Son *song) {
+int load_songs(char * filename, Son *song) {
     int taille = 100;
     song = malloc(sizeof(Son)*taille);
     if(song == NULL)
@@ -164,4 +164,5 @@ void melanger(Son *song, int count){
 
 
 }
+
 

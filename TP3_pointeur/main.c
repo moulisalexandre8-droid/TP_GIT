@@ -4,81 +4,28 @@
 
 int main(){
 
-    int taille;
-    int width;
-    int max_height;
-    char img[100][100];
-    int mid;
+    srand(time(NULL));
 
-    printf("Choisis une taille compris entre 5 et 10");
-    scanf("%d", &taille);
+    Son song[100];
+    int count;
+    int i;
 
-    if( taille < 4 && taille > 11 ){
-        printf("La taille doit etre comprise entre 5 et 10");
-        scanf("%d", &taille);
-    }
-    else{
-        width = taille*taille;
-        max_height = 3*taille-1;
-        for(int j=0; j <= width; j++){
-            for(int i=0; i <= max_height; i++){
-                img[j][i]= ' ';
-            }
-                
-        }
+    count = load_songs("songs.txt", song);
+    printf("Nombre de chansons charge : %d\n", count);
 
-    int mid = width / 2;
+    printf("Avant melange :\n");
 
-    for (int i = 0; i < taille; i++) {
-
-        int left  = mid - i;   
-        int right = mid + i;   
-        img[i][left] = 'A';
-        img[i][right] = 'A';
-        for (int j = left +1; j < right; j++){
-            img[i][j] = 'S';
-        }
-        for (int t = 0; t < mid -(taille-1); t++){
-            img[taille-1][t] = '_';
-        }
-        for (int t = mid + (taille-1)+1; t<width; t++ ){
-            img[taille-1][t] = '_';
-        }
-    }
+    melanger(song, count);
     
-    
+    for(i = 0; i < count; i++){
+        printf("%d - %s | %s | %s \n", i+1, song[i].nom_fichier, song[i].artiste, song[i].titre);
 
-int taille2 = taille;              
-int left = mid - (taille - 1) + 1;     
-int right = mid + (taille - 1) - 1;
-
-for (int t = 0; t < taille - 1; t++) {  
-
-    img[taille2][left] = '.';
-    img[taille2][right] = '.';
-
-    for (int x = left + 1; x < right; x++) {
-        img[taille2][x] = 'S';
     }
 
-    left++;
-    right--;
-    taille2++;
-}
+    printf("Apres melange :\n");
 
-for (int k = 0; k < taille; k++){
-    
+    if(count == -1){
 
-}
-
-
-
-
-    for (int j = 0; j < max_height; j++) {
-        for (int i = 0; i < width; i++) {
-            printf("%c", img[j][i]);
-        }
-        printf("\n");
     }
 
 
@@ -86,17 +33,5 @@ for (int k = 0; k < taille; k++){
 
 
 
-
-
-
-
-
-
-
-    }
-
-
-    load_songs("songs.txt");
-    
     return 0;
 }
