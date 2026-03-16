@@ -1,6 +1,10 @@
 #ifndef BLINDTEST_H
 #define BLINDTEST_H
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
 
 typedef struct Son
 {
@@ -29,7 +33,7 @@ typedef struct Joueur_liste
 
 int load_songs(char * filename, Son *song);
 
-void melanger(Son *song);
+void melanger(Son *song, int count);
 
 void gestion_joueur();
 

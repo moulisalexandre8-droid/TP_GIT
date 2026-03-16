@@ -1,10 +1,6 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <ctype.h>
-#include <blindtest.h>
+
+#include "blindtest.h"
 
 
 /* -------------------------------------------------- */
@@ -148,9 +144,7 @@ int load_songs(char * filename, Son *song) {
 void melanger(Son *song, int count){
 
     if(song == NULL)
-        return 0;
-
-    srandtime(NULL);
+        return ;
 
     for(int i =0 ; i<count; i++){
 
