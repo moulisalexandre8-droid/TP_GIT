@@ -4,7 +4,9 @@
 
 typedef struct Son
 {
-    char tab[50];
+    char nom_fichier[50];
+    char titre[50];
+    char artiste[50];
 
 }Son;
 
@@ -12,14 +14,22 @@ typedef struct Joueur
 {
     char nom[50];
     int score;
-    struct Joueur * suivant;
 }Joueur;
 
+typedef struct Joueur_liste
+{
+    char nom[50];
+    int meilleur_score;
+    struct Joueur * suivant;
+
+}Joueur_liste;
 
 
 
 
-void lire_et_melange();
+void  load_songs();
+
+void melanger();
 
 void gestion_joueur();
 

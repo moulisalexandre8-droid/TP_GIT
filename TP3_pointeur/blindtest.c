@@ -134,9 +134,9 @@ void load_songs(char * filename, Son *song) {
             taille *=2;
             song = realloc(song, sizeof(Son)*taille);
         }
-        strcpy(song[count].nom_fichier, nom_fichier);
-            strcpy(song[count].titre, titre);
-            strcpy(song[count].artiste, artiste);
+        strcpy(song[count].nom_fichier, file);
+            strcpy(song[count].titre, title);
+            strcpy(song[count].artiste, artist);
 
 // TO DO
 // STOCKER LES CHANSONS

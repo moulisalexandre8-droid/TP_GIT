@@ -1,5 +1,6 @@
 //exo 1
 #include <stdio.h>
+#include <blindtest.h>
 
 int main(){
 
@@ -94,6 +95,8 @@ for (int k = 0; k < taille; k++){
 
     }
 
+
+    load_songs("songs.txt");
     
     return 0;
 }
