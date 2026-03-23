@@ -59,5 +59,14 @@ namespace TP4TUTest
 		{
 			Assert::AreEqual(max2(4, 4), 4);
 		}
+
+
+		TEST_METHOD(Fact1)
+		{
+			Assert::AreEqual(factorielle(0), 1);
+		}
+
+
+
 	};
 }
