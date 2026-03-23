@@ -101,5 +101,10 @@ namespace TP4TUTest
 		{
 			Assert::AreEqual(contientMajuscule("ABC"), 1);
 		}
+
+		TEST_METHOD(contientMajuscule4)
+		{
+			Assert::AreEqual(contientMajuscule(""), 0);
+		}
 	};
 }
