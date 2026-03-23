@@ -35,6 +35,8 @@ int contientMajuscule(const char* chaine) {
 }
 
 int divisionExacte(int a, int b) {
+    if (b == 0)
+        return 0;
     return a % b == 0;
 }
 
