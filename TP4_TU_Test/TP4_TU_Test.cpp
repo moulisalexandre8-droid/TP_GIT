@@ -83,7 +83,7 @@ namespace TP4TUTest
 
 		TEST_METHOD(Fact6)
 		{
-			Assert::AreEqual(factorielle(-3), 1);
+			Assert::AreEqual(factorielle(-3), 5);
 		}
 	};
 }
