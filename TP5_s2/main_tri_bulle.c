@@ -1,0 +1,22 @@
+#include "tri_bulle.h"
+
+
+int main() {
+    int N = 80;
+    Medicament tab[80];
+
+    saisir(tab, N);
+    triBulles(tab, N);
+
+    printf("\nTrie par date de peremption :\n");
+
+    for(int i = 0; i < N; i++) {
+        printf("%s - %02d/%02d/%d\n",
+               tab[i].nom,
+               tab[i].peremption.jour,
+               tab[i].peremption.mois,
+               tab[i].peremption.annee);
+    }
+
+    return 0;
+}

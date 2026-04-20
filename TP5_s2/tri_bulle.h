@@ -1,3 +1,6 @@
+#ifndef TRI_BULLE.H
+#define TRI_BULLE.H
+
 #include <stdio.h>
 #include <string.h>
 
@@ -20,3 +23,5 @@ void saisir(Medicament tab[], int n);
 int comparerDate(Date d1, Date d2);
 
 void triBulles(Medicament tab[], int n);
+
+#endif
