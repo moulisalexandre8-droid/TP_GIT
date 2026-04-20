@@ -86,3 +86,15 @@ int rechercheDicho(Medicament tab[], int n, char nom[]) {
     else
         return -1;
 }
+
+Medicament plusCher(Medicament tab[], int n) {
+    Medicament max = tab[0];
+
+    for(int i = 1; i < n; i++) {
+        if(tab[i].prix > max.prix) {
+            max = tab[i];
+        }
+    }
+
+    return max;
+}

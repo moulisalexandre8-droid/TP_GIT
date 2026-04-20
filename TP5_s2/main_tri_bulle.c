@@ -18,5 +18,9 @@ int main() {
                tab[i].peremption.annee);
     }
 
+    Medicament m = plusCher(tab, N);
+
+    printf("\nMedicament le plus cher : %s (%.2f $)\n", m.nom, m.prix);
+
     return 0;
 }

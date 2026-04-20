@@ -26,4 +26,7 @@ void triBulles(Medicament tab[], int n);
 
 int rechercheDicho(Medicament tab[], int n, char nom[]);
 
+Medicament plusCher(Medicament tab[], int n);
+
+
 #endif
