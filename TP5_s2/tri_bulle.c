@@ -34,7 +34,27 @@ void saisir(Medicament tab[], int n){
     }
 }
 
-int comparerDate(Date d1, Date d2){}
+int comparerDate(Date d1, Date d2) {
+    if(d1.annee != d2.annee)
+        return d1.annee - d2.annee;
+
+    if(d1.mois != d2.mois)
+        return d1.mois - d2.mois;
+
+    return d1.jour - d2.jour;
+}
 
 
-void triBulles(Medicament tab[], int n){}
+void triBulles(Medicament tab[], int n) {
+    Medicament temp;
+
+    for(int i = 0; i < n-1; i++) {
+        for(int j = 0; j < n-i-1; j++) {
+            if(comparerDate(tab[j].peremption, tab[j+1].peremption) > 0) {
+                temp = tab[j];
+                tab[j] = tab[j+1];
+                tab[j+1] = temp;
+            }
+        }
+    }
+}
