@@ -28,5 +28,7 @@ int rechercheDicho(Medicament tab[], int n, char nom[]);
 
 Medicament plusCher(Medicament tab[], int n);
 
+float tauxVente(Medicament tab[], int n);
+
 
 #endif

@@ -22,5 +22,9 @@ int main() {
 
     printf("\nMedicament le plus cher : %s (%.2f $)\n", m.nom, m.prix);
 
+    float taux = tauxVente(tab, N);
+
+    printf("Taux de vente : %.2f %%\n", taux * 100);
+
     return 0;
 }

@@ -98,3 +98,18 @@ Medicament plusCher(Medicament tab[], int n) {
 
     return max;
 }
+
+float tauxVente(Medicament tab[], int n) {
+    int total_vendus = 0;
+    int total_stock = 0;
+
+    for(int i = 0; i < n; i++) {
+        total_vendus += tab[i].nb_vendus;
+        total_stock += tab[i].stock;
+    }
+
+    if (total_vendus + total_stock == 0)
+        return 0;
+
+    return (float)total_vendus / (total_vendus + total_stock);
+}
