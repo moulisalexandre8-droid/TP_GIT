@@ -26,5 +26,16 @@ int main() {
 
     printf("Taux de vente : %.2f %%\n", taux * 100);
 
+    Cellule* liste = NULL;
+
+    for(int i = 0; i < N; i++) {
+        liste = ajouter(liste, tab[i]);
+    }
+
+    trierListe(liste);
+
+    printf("\nListe triee par code :\n");
+    afficherListe(liste);
+
     return 0;
 }

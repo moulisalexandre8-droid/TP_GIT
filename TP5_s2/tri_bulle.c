@@ -113,3 +113,25 @@ float tauxVente(Medicament tab[], int n) {
 
     return (float)total_vendus / (total_vendus + total_stock);
 }
+
+Cellule* ajouter(Cellule* tete, Medicament m) {
+    Cellule* nouv = (Cellule*)malloc(sizeof(Cellule));
+    nouv->med = m;
+    nouv->suivant = tete;
+    return nouv;
+}
+
+void trierListe(Cellule* tete) {
+    Cellule *i, *j;
+    Medicament temp;
+
+    for(i = tete; i != NULL; i = i->suivant) {
+        for(j = i->suivant; j != NULL; j = j->suivant) {
+            if(i->med.code > j->med.code) {
+                temp = i->med;
+                i->med = j->med;
+                j->med = temp;
+            }
+        }
+    }
+}
