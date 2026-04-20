@@ -58,3 +58,31 @@ void triBulles(Medicament tab[], int n) {
         }
     }
 }
+
+int rechercheDicho(Medicament tab[], int n, char nom[]) {
+    int debut = 0;
+    int fin = n - 1;
+    int mil;
+    int trouve = 0;
+
+    while (!trouve && debut <= fin) {
+        mil = (debut + fin) / 2;
+
+        int cmp = strcmp(nom, tab[mil].nom);
+
+        if (cmp == 0) {
+            trouve = 1;
+        }
+        else if (cmp > 0) {
+            debut = mil + 1;
+        }
+        else {
+            fin = mil - 1;
+        }
+    }
+
+    if (trouve)
+        return mil;
+    else
+        return -1;
+}

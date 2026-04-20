@@ -24,4 +24,6 @@ int comparerDate(Date d1, Date d2);
 
 void triBulles(Medicament tab[], int n);
 
+int rechercheDicho(Medicament tab[], int n, char nom[]);
+
 #endif
